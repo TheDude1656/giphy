@@ -1,4 +1,5 @@
-.btn {
+.btn,
+.subbtn {
 
     -webkit-transition-duration: 0.4s;
     border: none;

@@ -1,6 +1,5 @@
-var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=5&q=";
-var newSearch;
-var time = 0;
+var queryURLBase = "http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&limit=5&q=";
+var queryURL;
 var arr = ["braveheart", "gladiator", "star wars", "anchorman", "step brothers", "talladega nights", "elf", "old school"];
 
 $(function() {
@@ -12,15 +11,20 @@ $(function() {
 
 
     $("#submit").on("click", function() {
-
-        $("#btns").append("<button class='btn'>" + ($("#input").val()));
+        var newMovie = $("<button>" + ($("#input").val()) + "</button>");
+        newMovie.addClass("btn");
+        newMovie.attr("id", ($("#input").val()));
         arr.push($("#input").val());
-        console.log(newSearch, arr);
+        $("#btns").append(newMovie);
+
 
 
     });
 
-    $("#btns").on("click", function() {
+    $(".btn").on("click", function() {
+
+        console.log($(this).attr('id'));
+        queryURL = queryURLBase + ($(this).attr('id'));
         searchGif();
     })
 
@@ -42,7 +46,7 @@ $(function() {
 
     function searchGif() {
         $.ajax({
-            url: newSearch,
+            url: queryURL,
             method: 'GET'
         }).done(function(response) {
             console.log(response);
