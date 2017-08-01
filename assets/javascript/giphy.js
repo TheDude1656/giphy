@@ -23,21 +23,13 @@ $(function() {
         return false;
     });
 
-    // $(".btn").on("click", function() {
-
-    //     console.log($(this).attr('id'));
-    //     queryURL = queryURLBase + ($(this).attr('id'));
-    //     searchGif();
-    // })
-
 
     function makeBtn() {
         $("#btns").empty();
         for (i = 0; i < arr.length; i++) {
             var newBtn = $("<button>").text(arr[i]).addClass("btn").attr({ 'data-name': arr[i] });
 
-            // newBtn.addClass("btn");
-            // newBtn.attr('id', arr[i]);
+
 
             $("#btns").append(newBtn);
         }
