@@ -12,7 +12,8 @@
     transition-duration: 0.4s;
 }
 
-.btn:hover {
+.btn:hover,
+.subbtn:hover {
     background-color: #4CAF50;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     color: white;
