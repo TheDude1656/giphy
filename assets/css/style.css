@@ -27,3 +27,7 @@ h1,
 h3 {
     text-shadow: 2px 2px 5px lightblue;
 }
+
+body {
+    background-image: url("../../assets/images/giftly.png");
+}
